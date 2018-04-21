@@ -10,7 +10,7 @@ void nextTurn(allPlayersInfo players); // Tells the next player it is their turn
 
 int getCurrentTurn(); // Find out who's turn it is right now, to find out who's turn it is next.
 
-allPlayersInfo addStudent(char studentType, int playerID); // Add a student to a specific player. Returns the struct of the players.
+allPlayersInfo addStudent(char studentType, int playerID, allPlayersInfo players); // Add a student to a specific player. Returns the struct of the players.
 
 board buildCampus(char* location, int playerID); // Build a campus for that player. Returns a struct of the board.
 
