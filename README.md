@@ -10,3 +10,5 @@ nextTurn(); // Tell the next player it is their turn.
 currentTurn(); // Find out who's turn it is right now, to find out who's turn it is next.
 
 addStudent(char studentType, int player); // Add a student to a specific player.
+
+buildCampus(char \* location, int player); // Build a campus for that player.
