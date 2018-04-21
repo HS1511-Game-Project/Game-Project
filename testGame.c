@@ -8,8 +8,10 @@
 #define BOARD_SIZE 100
 #define CAMPUS 1
 int main(/* Add argv stuff here */) {
-  // First testing the buildCampus function and getTileInfo function.
+  // TEST 1 // buildCampus, getTileInfo
   char * newBoard[BOARD_SIZE] = setBoardUp();
-  newBoard = buildCampus("lrlrlr");
-  assert(getTileInfo("lrlrlr", newBoard) == CAMPUS);
+  newBoard = buildCampus("lr");
+  assert(getTileInfo("lr", newBoard) == CAMPUS);
+  // TEST 2 // 
+  
 }
