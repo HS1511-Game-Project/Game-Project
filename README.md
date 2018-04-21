@@ -21,7 +21,9 @@ int rollDice(); // Returns a value on a dice.
 board setBoardUp(); // Creates the board.
 
 playerInfo getPlayerInfo(int playerID); // Returns the information about a player.
+
+allPlayersInfo getAllPlayersInfo(); // Returns a struct containing structs for every single player and info about them (e.g. How many of each type of student they have).
 ```
 
 ## Important Things To Note
-allPlayersInfo is an array of the structs of playerInfo.
+allPlayersInfo is a struct of the structs of playerInfo.
