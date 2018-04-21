@@ -12,3 +12,5 @@ currentTurn(); // Find out who's turn it is right now, to find out who's turn it
 addStudent(char studentType, int player); // Add a student to a specific player.
 
 buildCampus(char \* location, int player); // Build a campus for that player.
+
+getInfo(char \* location); // Returns the information about that tile.
