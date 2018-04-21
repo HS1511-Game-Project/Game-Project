@@ -6,17 +6,22 @@ The aim of this is to create a program to host the game for people (AIs) to play
 
 ## Functions To Be Tested And Implemented
 ```c
-void nextTurn(playersInfo players); // Tells the next player it is their turn.
+void nextTurn(allPlayersInfo players); // Tells the next player it is their turn.
 
 int getCurrentTurn(); // Find out who's turn it is right now, to find out who's turn it is next.
 
-playersInfo addStudent(char studentType, int player); // Add a student to a specific player. Returns the struct of the players.
+allPlayersInfo addStudent(char studentType, int playerID); // Add a student to a specific player. Returns the struct of the players.
 
-board buildCampus(char* location, int player); // Build a campus for that player. Returns a struct of the board.
+board buildCampus(char* location, int playerID); // Build a campus for that player. Returns a struct of the board.
 
 char* getTileInfo(char* location); // Returns a string with the information about that tile.
 
 int rollDice(); // Returns a value on a dice.
 
 board setBoardUp(); // Creates the board.
+
+playerInfo getPlayerInfo(int playerID); // Returns the information about a player.
 ```
+
+## Important Things To Note
+allPlayersInfo is an array of the structs of playerInfo.
