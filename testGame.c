@@ -5,6 +5,11 @@
 #include <stdlib.h>
 #include "Game.h"
 
+#define BOARD_SIZE 100
+#define CAMPUS 1
 int main(/* Add argv stuff here */) {
-  
+  // First testing the buildCampus function and getTileInfo function.
+  char * newBoard[BOARD_SIZE] = setBoardUp();
+  newBoard = buildCampus("lrlrlr");
+  assert(getTileInfo("lrlrlr", newBoard) == CAMPUS);
 }
