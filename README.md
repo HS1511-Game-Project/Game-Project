@@ -12,9 +12,9 @@ int getCurrentTurn(); // Find out who's turn it is right now, to find out who's 
 
 playersInfo addStudent(char studentType, int player); // Add a student to a specific player. Returns the struct of the players.
 
-board buildCampus(char \* location, int player); // Build a campus for that player. Returns a struct of the board.
+board buildCampus(char* location, int player); // Build a campus for that player. Returns a struct of the board.
 
-char \* getTileInfo(char \* location); // Returns a string with the information about that tile.
+char* getTileInfo(char* location); // Returns a string with the information about that tile.
 
 int rollDice(); // Returns a value on a dice.
 ```
