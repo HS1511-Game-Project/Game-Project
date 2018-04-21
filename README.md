@@ -17,4 +17,6 @@ board buildCampus(char* location, int player); // Build a campus for that player
 char* getTileInfo(char* location); // Returns a string with the information about that tile.
 
 int rollDice(); // Returns a value on a dice.
+
+board setBoardUp(); // Creates the board.
 ```
