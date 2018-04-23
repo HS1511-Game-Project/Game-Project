@@ -6,33 +6,20 @@
 #include <stdlib.h>
 #include "Game.h"
 
-#define BOARD_SIZE 100
-#define CAMPUS 1
-#define BACHELOR_OF_MONEY 1
-
 int main(/* Add argv stuff here */) {
   
   // If you want to create a new board, use the corropsonding test number
   
-  // TEST 1 // buildCampus, getTileInfo - Djimon
-  printf("Testing buildCampus and setBoardUp and getTileInfo...");
-  char * newBoard[BOARD_SIZE] = setBoardUp();
-  newBoard = buildCampus("lr");
-  assert(getTileInfo("lr", newBoard) == CAMPUS);
-  printf("Testing Passed!");
+  // TEST 1 // getWhoseTurn and makeAction - Djimon
+  printf("Testing getWhoseTurn and makeAction.");
+  Game newBoard;
+  playerID = getWhoseTurn(newBoard);
+  makeAction(newBoard, NEXT_TURN); // MUST BE DEFINED IN GAME.H TO BE A NUMBER FOR THE FUNCTION
+  assert(playerID != getWhoseTurn(newBoard)); // Check that it is now a different person's turn.
   
-  // TEST 2 // getPlayerInfo, addStudent - Djimon
-  printf("Testing getPlayerInfo and addStudent...")
-  int playerToTest = 1;
-  int initialNumberOfStudents = getPlayerInfo(playerToTest).bMS; // bMS stands for Bachelor of Money Students
-  addStudent(BACHELOR_OF_MONEY, playerToTest, getAllPlayersInfo());
-  int newNumberOfStudents = getPlayerInfo(playerToTest).bMS;
-  assert(newNumberOfStudents == initialNumberOfStudents + 1);
-  printf("Testing Passed!");
-  
-  // TEST 3 //  isLegalAction, board coordinates - Zac
+  // TEST 2 //  isLegalAction, board coordinates - Zac
   printf("Testing isLegalAction and board coordinates.");
-  char * newBoard[BOARD_SIZE] = setBoardUp(); // Override the original boards
+  Game newBoard;
   // Supposed to be false ( out of the board )
   assert(isLegalAction(newBoard,"llll") == 0);
   assert(isLegalAction(newBoard,"rrrr") == 0);
