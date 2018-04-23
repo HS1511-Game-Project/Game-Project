@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Below stuff was from Lecture 40 34:40
+typedef struct
+  _game {
+  // Put stuff here
+} game,
+
 int main(/* Put the argv argc stuff here plz */) {
   
 }
