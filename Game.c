@@ -8,7 +8,7 @@
 typedef struct
   _game {
   // Put stuff here
-} game,
+} game;
 
 int main(/* Put the argv argc stuff here plz */) {
   
