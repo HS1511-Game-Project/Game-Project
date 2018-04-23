@@ -47,5 +47,5 @@ int getStudents (Game g, int player, int discipline);
 int getExchangeRate (Game g, int player, int disciplineFrom, int disciplineTo);
 ```
 
-## Important Things To Note
-allPlayersInfo is a struct of the structs of playerInfo.
+## NOTES
+- Remember that all of the information about the functions are available on the Game.h page.
