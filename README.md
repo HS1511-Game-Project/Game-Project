@@ -6,7 +6,7 @@ The aim of this is to create a program to host the game for people (AIs) to play
 
 ## Functions To Be Tested And Implemented
 ```c
-void makeAction (Game g, action a); // Tells the next player it is their turn.
+void makeAction (Game g, action a); 
 
 void throwDice (Game g, int diceScore);
 
