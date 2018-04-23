@@ -6,23 +6,45 @@ The aim of this is to create a program to host the game for people (AIs) to play
 
 ## Functions To Be Tested And Implemented
 ```c
-void nextTurn(allPlayersInfo players); // Tells the next player it is their turn.
+void makeAction (Game g, action a); // Tells the next player it is their turn.
 
-int getCurrentTurn(); // Find out who's turn it is right now, to find out who's turn it is next.
+void throwDice (Game g, int diceScore);
 
-allPlayersInfo addStudent(char studentType, int playerID, allPlayersInfo players); // Add a student to a specific player. Returns the struct of the players.
+void disposeGame (Game g);
 
-board buildCampus(char* location, int playerID); // Build a campus for that player. Returns a struct of the board.
+int getDiscipline (Game g, int regionID);
 
-char* getTileInfo(char* location); // Returns a string with the information about that tile.
+int getDiceValue (Game g, int regionID);
 
-int rollDice(); // Returns a value on a dice.
+int getMostARCs (Game g);
 
-board setBoardUp(); // Creates the board.
+int getMostPublications (Game g);
 
-playerInfo getPlayerInfo(int playerID); // Returns the information about a player.
+int getTurnNumber (Game g);
 
-allPlayersInfo getAllPlayersInfo(); // Returns a struct containing structs for every single player and info about them (e.g. How many of each type of student they have).
+int getWhoseTurn (Game g);
+
+int getCampus(Game g, path pathToVertex);
+
+int getARC(Game g, path pathToEdge);
+
+int isLegalAction (Game g, action a);
+
+int getKPIpoints (Game g, int player);
+
+int getARCs (Game g, int player);
+
+int getGO8s (Game g, int player);
+
+int getCampuses (Game g, int player);
+
+int getIPs (Game g, int player);
+
+int getPublications (Game g, int player);
+
+int getStudents (Game g, int player, int discipline);
+
+int getExchangeRate (Game g, int player, int disciplineFrom, int disciplineTo);
 ```
 
 ## Important Things To Note
