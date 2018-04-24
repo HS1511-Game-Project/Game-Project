@@ -1,4 +1,4 @@
-![Build Status](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/bt345.svg)
+![Issues](https://img.shields.io/github/issues/HS1511-Game-Project/Game-Project.svg)
 
 
 # Game-Project
