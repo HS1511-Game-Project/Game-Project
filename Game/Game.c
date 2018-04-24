@@ -45,12 +45,13 @@ int main(/* Put the argv argc stuff here plz. */) {
   return EXIT_SUCCESS;
 }
 
-// Does not return 0 if Terra Nullis.
 int getWhoseTurn(Game g) { 
   int id;
-  if (g.currentTurn -1 % 3 == 0) {
-    id = UNI_A;
+  if (g.currentTurn == -1) {
+    id = NO_ONE;
   } else if (g.currentTurn % 3 == 0) {
+    id = UNI_A;
+  } else if (g.currentTurn +1 % 3 == 0) {
     id = UNI_B;
   } else {
     id = UNI_C;
