@@ -8,8 +8,6 @@
 
 int main(/* Add argv stuff here */) {
   
-  // If you want to create a new board, use the corropsonding test number
-  
   // TEST 1 // getWhoseTurn and makeAction - Djimon
   printf("Testing getWhoseTurn and makeAction.");
   Game newBoard;
