@@ -1,4 +1,4 @@
-[![Hi](http://circleci.com/)]
+[![macOS Build Status](https://circleci.com/gh/atom/atom/tree/master.svg?style=shield)]
 
 
 # Game-Project
