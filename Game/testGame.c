@@ -1,5 +1,5 @@
 
-// Created by [insert names here]
+// Created by Harris Borman, Djimon Jayasundera, and Zachary Chengy
 // This program aims to test the game and see if it is valid.
 
 #include <stdio.h>
