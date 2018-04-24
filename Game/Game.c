@@ -40,7 +40,7 @@ typedef struct _game {
   
 } game;
 
-int main(/* Put the argv argc stuff here plz */) {
+int main(/* Put the argv argc stuff here plz. */) {
   // I have no clue what to put here.
   return EXIT_SUCCESS;
 }
