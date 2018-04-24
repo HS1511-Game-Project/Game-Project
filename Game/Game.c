@@ -6,15 +6,36 @@
 
 typedef struct _game {
   int maxPoints;
-  int currentTurn;
+  int currentTurn; // This can be used to work out who's turn it is... as player 1 will go first.
   int diceNumber;
   
-  int player1Unis;
-  int player2Unis;
-  int player3Unis;
-  char *player1Campuses[player1Unis];
-  char *player2Campuses[player2Unis];
-  char *player3Campuses[player3Unis];
+  int p1Campuses; // These show the number of Unis that each player has.
+  int p2Campuses; // They are only used for the strings below.
+  int p3Campuses;
+  char *p1Campuses[player1Unis]; // The string will look like "lrlrlr llll rrll lll r" so this person has 5 campuses at locations
+  char *p2Campuses[player2Unis]; // separated by a space in the string.
+  char *p3Campuses[player3Unis];
+  
+  int p1ThdStudents; // These show how many of each type of student each player has.
+  int p1BpsStudents;
+  int p1BqnStudents;
+  int p1MjStudents;
+  int p1MtvStudents;
+  int p1MmoneyStudents;
+
+  int p2ThdStudents;
+  int p2BpsStudents;
+  int p2BqnStudents;
+  int p2MjStudents;
+  int p2MtvStudents;
+  int p2MmoneyStudents;
+  
+  int p3ThdStudents;
+  int p3BpsStudents;
+  int p3BqnStudents;
+  int p3MjStudents;
+  int p3MtvStudents;
+  int p3MmoneyStudents;
   
 } game;
 
