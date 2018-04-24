@@ -1,4 +1,4 @@
-## GNU AFFERO GENERAL PUBLIC LICENSE
+# GNU AFFERO GENERAL PUBLIC LICENSE
 
 Version 3, 19 November 2007
 
@@ -8,7 +8,7 @@ Version 3, 19 November 2007
  
  of this license document, but changing it is not allowed.
 
-# Preamble
+## Preamble
 
   The GNU Affero General Public License is a free, copyleft license for
 software and other kinds of works, specifically designed to ensure
@@ -619,7 +619,7 @@ an absolute waiver of all civil liability in connection with the
 Program, unless a warranty or assumption of liability accompanies a
 copy of the Program in return for a fee.
 
-# END OF TERMS AND CONDITIONS
+## END OF TERMS AND CONDITIONS
 
 How to Apply These Terms to Your New Programs
 
