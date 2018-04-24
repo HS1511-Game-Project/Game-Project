@@ -1,4 +1,8 @@
 ![Issues](https://img.shields.io/github/issues/HS1511-Game-Project/Game-Project.svg)
+![Forks](https://img.shields.io/github/forks/HS1511-Game-Project/Game-Project.svg)
+![Stars](https://img.shields.io/github/stars/HS1511-Game-Project/Game-Project.svg)
+![Lisence](https://img.shields.io/github/license/HS1511-Game-Project/Game-Project.svg)
+
 
 
 # Game-Project
