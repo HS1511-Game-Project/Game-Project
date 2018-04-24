@@ -1,4 +1,4 @@
-![macOS Build Status](https://circleci.com/gh/atom/atom/tree/master.svg?style=shield)
+![Build Status](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/bt345.svg)
 
 
 # Game-Project
