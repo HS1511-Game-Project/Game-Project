@@ -28,9 +28,16 @@ int main(/* Add argv stuff here */) {
   assert(isLegalAction(newBoard,path "llrlrrrr") == 1);
   assert(isLegalAction(newBoard,path "rrlrllll") == 1);
   
-  // Those were bad
-  printf("Testing Passed!")
-  //HOLY SHIT. Do u know how long it took me to change every single newBoard3 into a newBoard.
+  printf("Testing Passed!");
+  
+  // TEST 3 // getCampuses - Djimon
+  printf("Testing getCampuses.");
+  Game newBoard;
+  assert(getCampuses(newBoard, 1) == 0); // Make sure that player 1 has no campuses to start with.
+  assert(getCampuses(newBoard, 2) == 0);
+  assert(getCampuses(newBoard, 3) == 0);
+  printf("Testing Passed!");
+  
   
   // DONE
   printf("All Tests Passed!\nYou Are AWESOME!!!");
