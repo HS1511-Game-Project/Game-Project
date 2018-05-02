@@ -10,14 +10,14 @@ int main(/* Add argv stuff here */) {
   
   // TEST 1 // getWhoseTurn and makeAction - Djimon
   printf("Testing getWhoseTurn and makeAction.");
-  Game newBoard;
+  Game newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
   playerID = getWhoseTurn(newBoard);
   makeAction(newBoard, NEXT_TURN); // MUST BE DEFINED IN GAME.H TO BE A NUMBER FOR THE FUNCTION
   assert(playerID != getWhoseTurn(newBoard)); // Check that it is now a different person's turn.
   
   // TEST 2 //  isLegalAction, board coordinates - Zac
   printf("Testing isLegalAction and board coordinates.");
-  Game newBoard;
+  newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
   // Supposed to be false ( out of the board )
   assert(isLegalAction(newBoard,path "llll") == 0);
   assert(isLegalAction(newBoard,path "rrrr") == 0);
@@ -32,7 +32,7 @@ int main(/* Add argv stuff here */) {
   
   // TEST 3 // getCampuses - Djimon
   printf("Testing getCampuses.");
-  Game newBoard;
+  newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
   assert(getCampuses(newBoard, 1) == 0); // Make sure that player 1 has no campuses to start with.
   assert(getCampuses(newBoard, 2) == 0);
   assert(getCampuses(newBoard, 3) == 0);
