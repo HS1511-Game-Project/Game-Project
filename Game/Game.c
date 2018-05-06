@@ -50,6 +50,10 @@ int main(/* Put the argv argc stuff here plz. */) {
   return EXIT_SUCCESS;
 }
 
+int getTurnNumber(Game g) {
+  return g.currentTurn;
+}
+
 int getWhoseTurn(Game g) { 
   int id;
   if (g.currentTurn == -1) {
@@ -158,7 +162,7 @@ int isLegalAction(Game g, action a){
         legal = False;
         p += 1; // umm.. what is this?
     return legal;
-
+}
 
 
                      
