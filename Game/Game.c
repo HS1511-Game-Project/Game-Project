@@ -20,28 +20,28 @@ typedef struct _game {
   campusMap[11][9] = CAMPUS_C;
 
   int p1Campuses = 2;
-  int p1ThdStudents; // These show how many of each type of student each player has.
-  int p1BpsStudents;
-  int p1BqnStudents;
-  int p1MjStudents;
-  int p1MtvStudents;
-  int p1MmoneyStudents;
+  int p1ThdStudents = 0; // These show how many of each type of student each player has.
+  int p1BpsStudents = 3;
+  int p1BqnStudents = 3;
+  int p1MjStudents = 1;
+  int p1MtvStudents = 1;
+  int p1MmoneyStudents = 1;
 
   int p2Campuses = 2;
-  int p2ThdStudents;
-  int p2BpsStudents;
-  int p2BqnStudents;
-  int p2MjStudents;
-  int p2MtvStudents;
-  int p2MmoneyStudents;
+  int p2ThdStudents = 0;
+  int p2BpsStudents = 3;
+  int p2BqnStudents = 3;
+  int p2MjStudents = 1;
+  int p2MtvStudents = 1;
+  int p2MmoneyStudents = 1;
   
   int p3Campuses = 2;
-  int p3ThdStudents;
-  int p3BpsStudents;
-  int p3BqnStudents;
-  int p3MjStudents;
-  int p3MtvStudents;
-  int p3MmoneyStudents;
+  int p3ThdStudents = 0;
+  int p3BpsStudents = 3;
+  int p3BqnStudents = 3;
+  int p3MjStudents = 1;
+  int p3MtvStudents = 1;
+  int p3MmoneyStudents = 1;
   
 } game;
 
