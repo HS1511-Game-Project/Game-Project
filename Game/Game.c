@@ -10,12 +10,15 @@ typedef struct _game {
   int currentTurn; // This can be used to work out who's turn it is... as player 1 will go first.
   int diceNumber;
   
-  int p1Campuses; // These show the number of Unis that each player has.
-  int p2Campuses; // They are only used for the strings below.
-  int p3Campuses;
-  char *p1Campuses[player1Unis]; // The string will look like "lrlrlr llll rrll lll r" so this person has 5 campuses at locations
-  char *p2Campuses[player2Unis]; // separated by a space in the string.
-  char *p3Campuses[player3Unis];
+  // campusMap only contains information about whether a campus is on a vertex.
+  int campusMap[12][11] = {0}; // The map has 11 rows and 12 columns. Initialize everything as 0.
+  campusMap[7][1] = CAMPUS_A; // Locations of initial campuses.
+  campusMap[1][8] = CAMPUS_B;
+  campusMap[2][3] = CAMPUS_C;
+  campusMap[6][11] = CAMPUS_A;
+  campusMap[12][4] = CAMPUS_B;
+  campusMap[11][9] = CAMPUS_C;
+
   
   int p1ThdStudents; // These show how many of each type of student each player has.
   int p1BpsStudents;
