@@ -19,7 +19,7 @@ typedef struct _game {
   campusMap[12][4] = CAMPUS_B;
   campusMap[11][9] = CAMPUS_C;
 
-  
+  int p1Campuses = 2;
   int p1ThdStudents; // These show how many of each type of student each player has.
   int p1BpsStudents;
   int p1BqnStudents;
@@ -27,6 +27,7 @@ typedef struct _game {
   int p1MtvStudents;
   int p1MmoneyStudents;
 
+  int p2Campuses = 2;
   int p2ThdStudents;
   int p2BpsStudents;
   int p2BqnStudents;
@@ -34,6 +35,7 @@ typedef struct _game {
   int p2MtvStudents;
   int p2MmoneyStudents;
   
+  int p3Campuses = 2;
   int p3ThdStudents;
   int p3BpsStudents;
   int p3BqnStudents;
@@ -62,4 +64,15 @@ int getWhoseTurn(Game g) {
   return id;
 }
 
+int getCampuses(Game g, int player) {
+  int numCampuses;
+  if (player == 1) {
+    numCampuses = game.p1Campuses;
+  } else if (player == 2) {
+    numCampuses = game.p2Campuses;
+  } else {
+    numCampuses = game.p3Campuses;
+  }
+  return numCampuses;
+}
 
