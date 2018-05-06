@@ -125,34 +125,39 @@ int getStudents(Game g, int player, int discipline) {
 }
 
 int isLegalAction(Game g, action a){
-    int legal = TRUE; //assumes true
+    int legal = True; //assumes true
     int player = getWhoseTurn(g);
-    if(getTurnNumber(g)==TERRA_NULLIS){
-        legal = FALSE;
-    }else if(a.actionCode == PASS){
-        
-    }else if(a.actionCode == BUILD_CAMPUS){
-        if((getStudents(g, player, STUDENT_BPS)<1) || (getStudents(g, player, STUDENT_BQN)<1) || (getStudents(g, player, STUDENT_MJ)<1) || (getStudents(g, player, STUDENT_MTV)<1)){
-            legal = FALSE;
+    if (getTurnNumber(g )== TERRA_NULLIS) {
+        legal = False;
+    } else if (a.actionCode == PASS) {
+        continue 
+    } else if (a.actionCode == BUILD_CAMPUS) {
+        bool enoughBps = getStudents(g, player, STUDENT_BPS)<1;
+        bool enoughBqn = getStudents(g, player, STUDENT_BQN)<1;
+        bool enoughMj = getStudents(g, player, STUDENT_MJ)<1;
+        bool enoughMtv = getStudents(g, player, STUDENT_MTV)<1;
+        if (enoughBps || enoughBqn || enoughMj || enoughMtv) { 
+            legal = False;
         }
-    }else if(a.actionCode == BUILD_GO8){
+    } else if (a.actionCode == BUILD_GO8) {
+        // I am not even gonna try keeping that next line under 72 characters.
         if((g->players[player].disciplines[STUDENT_MJ]<2) || (g->players[player].disciplines[STUDENT_MMONEY]<3) || (getCampuses(g, player)<1)){
-            legal = FALSE;
+            legal = False;
         }
-    }else if(a.actionCode == OBTAIN_ARC){
+    } else if (a.actionCode == OBTAIN_ARC) {
         if((g->players[player].disciplines[STUDENT_BPS]<1) || (g->players[player].disciplines[STUDENT_BQN]<1)){
-            legal = FALSE;
+            legal = False;
         }
-    }else if(a.actionCode == START_SPINOFF){
+    } else if (a.actionCode == START_SPINOFF) {
         if((getStudents(g, player, STUDENT_MJ)<1) || (getStudents(g, player, STUDENT_MTV)<1) || (getStudents(g, player, STUDENT_MMONEY)<1)){
-            legal = FALSE;
+            legal = False;
         }
-    }else if(a.actionCode == OBTAIN_PUBLICATION){
-        legal = FALSE:
-    }else if(a.actionCode == OBTAIN_IP_PATENT){
-        return False
-        p += 1
-    return True
+    } else if (a.actionCode == OBTAIN_PUBLICATION) {
+        legal = False;
+    } else if (a.actionCode == OBTAIN_IP_PATENT) {
+        legal = False;
+        p += 1; // umm.. what is this?
+    return legal;
 
 
 
