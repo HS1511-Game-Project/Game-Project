@@ -130,7 +130,7 @@ int isLegalAction(Game g, action a){
     if (getTurnNumber(g )== TERRA_NULLIS) {
         legal = False;
     } else if (a.actionCode == PASS) {
-        continue 
+        continue;
     } else if (a.actionCode == BUILD_CAMPUS) {
         bool enoughBps = getStudents(g, player, STUDENT_BPS)<1;
         bool enoughBqn = getStudents(g, player, STUDENT_BQN)<1;
