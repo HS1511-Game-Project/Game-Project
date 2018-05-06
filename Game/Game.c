@@ -124,3 +124,37 @@ int getStudents(Game g, int player, int discipline) {
   return numStudents;
 }
 
+int isLegalAction(Game g, action a){
+    int legal = TRUE; //assumes true
+    int player = getWhoseTurn(g);
+    if(getTurnNumber(g)==TERRA_NULLIS){
+        legal = FALSE;
+    }else if(a.actionCode == PASS){
+        
+    }else if(a.actionCode == BUILD_CAMPUS){
+        if((getStudents(g, player, STUDENT_BPS)<1) || (getStudents(g, player, STUDENT_BQN)<1) || (getStudents(g, player, STUDENT_MJ)<1) || (getStudents(g, player, STUDENT_MTV)<1)){
+            legal = FALSE;
+        }
+    }else if(a.actionCode == BUILD_GO8){
+        if((g->players[player].disciplines[STUDENT_MJ]<2) || (g->players[player].disciplines[STUDENT_MMONEY]<3) || (getCampuses(g, player)<1)){
+            legal = FALSE;
+        }
+    }else if(a.actionCode == OBTAIN_ARC){
+        if((g->players[player].disciplines[STUDENT_BPS]<1) || (g->players[player].disciplines[STUDENT_BQN]<1)){
+            legal = FALSE;
+        }
+    }else if(a.actionCode == START_SPINOFF){
+        if((getStudents(g, player, STUDENT_MJ)<1) || (getStudents(g, player, STUDENT_MTV)<1) || (getStudents(g, player, STUDENT_MMONEY)<1)){
+            legal = FALSE;
+        }
+    }else if(a.actionCode == OBTAIN_PUBLICATION){
+        legal = FALSE:
+    }else if(a.actionCode == OBTAIN_IP_PATENT){
+        return False
+        p += 1
+    return True
+
+
+
+                     
+
