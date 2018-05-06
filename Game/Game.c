@@ -21,6 +21,7 @@ typedef struct _game {
 
   int p1Campuses = 2;
   int p1GO8s = 0;
+  int p1IPs = 0;
   int p1ThdStudents = 0; // These show how many of each type of student each player has.
   int p1BpsStudents = 3;
   int p1BqnStudents = 3;
@@ -30,6 +31,7 @@ typedef struct _game {
 
   int p2Campuses = 2;
   int p2GO8s = 0;
+  int p2IPs = 0;
   int p2ThdStudents = 0;
   int p2BpsStudents = 3;
   int p2BqnStudents = 3;
@@ -39,6 +41,7 @@ typedef struct _game {
   
   int p3Campuses = 2;
   int p3GO8s = 0;
+  int p3IPs = 0;
   int p3ThdStudents = 0;
   int p3BpsStudents = 3;
   int p3BqnStudents = 3;
@@ -93,6 +96,18 @@ int getCampuses(Game g, int player) {
     numCampuses = game.p3Campuses;
   }
   return numCampuses;
+}
+
+int getIPs(Game g, int player) {
+  int IPs;
+  if (player == 1) {
+    IPs = game.p1IPs;
+  } else if (player == 2) {
+    IPs = game.p2IPs;
+  } else {
+    IPs = game.p3IPs;
+  }
+  return IPs;
 }
 
 int getStudents(Game g, int player, int discipline) {
