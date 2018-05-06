@@ -56,11 +56,11 @@ int main(/* Put the argv argc stuff here plz. */) {
   return EXIT_SUCCESS;
 }
 
-int getTurnNumber(Game g) {
+int getTurnNumber(Game g) { // Djimon
   return g.currentTurn;
 }
 
-int getWhoseTurn(Game g) { 
+int getWhoseTurn(Game g) { // Djimon
   int id;
   if (g.currentTurn == -1) {
     id = NO_ONE;
@@ -74,7 +74,7 @@ int getWhoseTurn(Game g) {
   return id;
 }
 
-int getGO8s(Game g, int player) {
+int getGO8s(Game g, int player) { // Djimon
   int numGO8s;
   if (player == 1) {
     numGO8s = game.p1GO8s;
@@ -86,7 +86,7 @@ int getGO8s(Game g, int player) {
   return numGO8s;
 }
 
-int getCampuses(Game g, int player) {
+int getCampuses(Game g, int player) { // Djimon
   int numCampuses;
   if (player == 1) {
     numCampuses = game.p1Campuses;
@@ -98,7 +98,7 @@ int getCampuses(Game g, int player) {
   return numCampuses;
 }
 
-int getIPs(Game g, int player) {
+int getIPs(Game g, int player) { // Djimon
   int IPs;
   if (player == 1) {
     IPs = game.p1IPs;
@@ -110,7 +110,7 @@ int getIPs(Game g, int player) {
   return IPs;
 }
 
-int getStudents(Game g, int player, int discipline) {
+int getStudents(Game g, int player, int discipline) { // Djimon
   int numStudents;
   if (player == 1) {
     if (discipline == STUDENT_THD) {
@@ -158,7 +158,7 @@ int getStudents(Game g, int player, int discipline) {
   return numStudents;
 }
 
-int isLegalAction(Game g, action a){
+int isLegalAction(Game g, action a) { // Zac
     int legal = True; //assumes true
     int player = getWhoseTurn(g);
     if (getTurnNumber(g )== TERRA_NULLIS) {
