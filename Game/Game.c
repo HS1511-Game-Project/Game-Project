@@ -76,3 +76,51 @@ int getCampuses(Game g, int player) {
   return numCampuses;
 }
 
+int getStudents(Game g, int player, int discipline) {
+  int numStudents;
+  if (player == 1) {
+    if (discipline == STUDENT_THD) {
+      numStudents = game.p1ThdStudents;
+    } else if (discipline == STUDENT_BPS) {
+      numStudents = game.p1BpsStudents;
+    } else if (discipline == STUDENT_BQN) {
+      numStudents = game.p1BqnStudents;
+    } else if (discipline == STUDENT_MJ) {
+      numStudents = game.p1MjStudents;
+    } else if (discipline == STUDENT_MTV) {
+      numStudents = game.p1MtvStudents;
+    } else { // else if (discipline == STUDENT_MMONEY) 
+      numStudents = game.p1MmoneyStudents;
+    }
+  } else if (player == 2) {
+    if (discipline == STUDENT_THD) {
+      numStudents = game.p2ThdStudents;
+    } else if (discipline == STUDENT_BPS) {
+      numStudents = game.p2BpsStudents;
+    } else if (discipline == STUDENT_BQN) {
+      numStudents = game.p2BqnStudents;
+    } else if (discipline == STUDENT_MJ) {
+      numStudents = game.p2MjStudents;
+    } else if (discipline == STUDENT_MTV) {
+      numStudents = game.p2MtvStudents;
+    } else { // else if (discipline == STUDENT_MMONEY) 
+      numStudents = game.p2MmoneyStudents;
+    }
+  } else { // else if (player == 3) {
+    if (discipline == STUDENT_THD) {
+      numStudents = game.p3ThdStudents;
+    } else if (discipline == STUDENT_BPS) {
+      numStudents = game.p3BpsStudents;
+    } else if (discipline == STUDENT_BQN) {
+      numStudents = game.p3BqnStudents;
+    } else if (discipline == STUDENT_MJ) {
+      numStudents = game.p3MjStudents;
+    } else if (discipline == STUDENT_MTV) {
+      numStudents = game.p3MtvStudents;
+    } else { // else if (discipline == STUDENT_MMONEY) 
+      numStudents = game.p3MmoneyStudents;
+    }
+  }
+  return numStudents;
+}
+
