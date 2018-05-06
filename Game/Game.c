@@ -22,6 +22,7 @@ typedef struct _game {
   int p1Campuses = 2;
   int p1GO8s = 0;
   int p1IPs = 0;
+  int p1ARCs = 0;
   int p1ThdStudents = 0; // These show how many of each type of student each player has.
   int p1BpsStudents = 3;
   int p1BqnStudents = 3;
@@ -32,6 +33,7 @@ typedef struct _game {
   int p2Campuses = 2;
   int p2GO8s = 0;
   int p2IPs = 0;
+  int p2ARCs = 0;
   int p2ThdStudents = 0;
   int p2BpsStudents = 3;
   int p2BqnStudents = 3;
@@ -42,6 +44,7 @@ typedef struct _game {
   int p3Campuses = 2;
   int p3GO8s = 0;
   int p3IPs = 0;
+  int p3ARCs = 0;
   int p3ThdStudents = 0;
   int p3BpsStudents = 3;
   int p3BqnStudents = 3;
@@ -72,6 +75,18 @@ int getWhoseTurn(Game g) { // Djimon
     id = UNI_C;
   }
   return id;
+}
+
+int getARCs(Game g, int player) { // Djimon
+  int numARCs;
+  if (player == 1) {
+    numARCs = game.p1ARCs;
+  } else if (player == 2) {
+    numARCs = game.p2ARCs;
+  } else {
+    numARCs = game.p3ARCs;
+  }
+  return numARCs;
 }
 
 int getGO8s(Game g, int player) { // Djimon
