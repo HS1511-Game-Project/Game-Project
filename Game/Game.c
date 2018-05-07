@@ -27,8 +27,6 @@ struct player {
 	int kpi;
 } player;
 
-
-
 typedef struct _game {
 	struct player players[3];
 	int turnNum;
