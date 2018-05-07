@@ -1,9 +1,54 @@
+
+
 // Created by Harris Borman, Djimon Jayasundera, and Zachary Chengy
 // This programs aims to host a game for AIs to play on.
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "Game.h"
+
+
+struct player {
+	// Campuses
+	path buildings[PATH_LIMIT];
+	// Arc Grants
+	path roads[PATH_LIMIT];
+	// GO8 Campuses
+	path upgradedBuildings[PATH_LIMIT];
+	//3 x BPS, 3 x B?, 1 x MTV, 1 x MJ, 1 x M$, and no ThD student
+	int ThD;
+	int BPS;
+	int BHW;
+	int MJ;
+	int MTV;
+	int MM;
+	// Achievement Points that contribute to KPI
+	int publications;
+	int IP;
+	int KPI;
+} player;
+
+
+
+typedef struct _game {
+
+	// Number of players
+
+	struct player players[3];
+
+	// Number of turns passed
+
+	int numTurn;
+
+	// Discipline in each sector
+
+	int disciplines[NUM_REGIONS];
+
+	// Dice Value in each sector
+
+	int diceValues[NUM_REGIONS];
+
+} game;
 
 typedef struct _game {
   int maxPoints;
