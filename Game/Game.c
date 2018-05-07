@@ -1,4 +1,4 @@
-// Created by Harris Borman, Djimon Jayasundera, and Zachary Chengy
+// Created by Harris Borman, Djimon Jayasundera, and Zachary Cheng
 // This programs aims to host a game for AIs to play on.
 
 #include <stdio.h>
