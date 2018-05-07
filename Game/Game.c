@@ -1,5 +1,3 @@
-
-
 // Created by Harris Borman, Djimon Jayasundera, and Zachary Chengy
 // This programs aims to host a game for AIs to play on.
 
@@ -8,102 +6,62 @@
 #include "Game.h"
 
 
+/*/////
+STRUCTS
+/////*/
+
 struct player {
-	// Campuses
-	path buildings[PATH_LIMIT];
-	// Arc Grants
-	path roads[PATH_LIMIT];
-	// GO8 Campuses
-	path upgradedBuildings[PATH_LIMIT];
-	//3 x BPS, 3 x B?, 1 x MTV, 1 x MJ, 1 x M$, and no ThD student
-	int ThD;
-	int BPS;
-	int BHW;
-	int MJ;
-	int MTV;
-	int MM;
-	// Achievement Points that contribute to KPI
-	int publications;
-	int IP;
-	int KPI;
+	path campusLocations[PATH_LIMIT];
+	path arcLocations[PATH_LIMIT];
+	path go8Locations[PATH_LIMIT];
+  
+  int thd = 0; // These show how many of each type of student each player has.
+  int bps = 3;
+  int bqn = 3;
+  int mj = 1;
+  int mtv = 1;
+  int mmoney = 1;
+
+	int pub; // Publications
+	int ip;
+	int kpi;
 } player;
 
 
 
 typedef struct _game {
-
-	// Number of players
-
 	struct player players[3];
-
-	// Number of turns passed
-
-	int numTurn;
-
-	// Discipline in each sector
-
+	int turnNum;
 	int disciplines[NUM_REGIONS];
-
-	// Dice Value in each sector
-
 	int diceValues[NUM_REGIONS];
-
-} game;
-
-typedef struct _game {
   int maxPoints;
-  int currentTurn; // This can be used to work out who's turn it is... as player 1 will go first.
-  int diceNumber;
-  
-  // campusMap only contains information about whether a campus is on a vertex.
-  int campusMap[12][11] = {0}; // The map has 11 rows and 12 columns. Initialize everything as 0.
-  campusMap[7][1] = CAMPUS_A; // Locations of initial campuses.
-  campusMap[1][8] = CAMPUS_B;
-  campusMap[2][3] = CAMPUS_C;
-  campusMap[6][11] = CAMPUS_A;
-  campusMap[12][4] = CAMPUS_B;
-  campusMap[11][9] = CAMPUS_C;
-
-  int p1Campuses = 2;
-  int p1GO8s = 0;
-  int p1IPs = 0;
-  int p1ARCs = 0;
-  int p1ThdStudents = 0; // These show how many of each type of student each player has.
-  int p1BpsStudents = 3;
-  int p1BqnStudents = 3;
-  int p1MjStudents = 1;
-  int p1MtvStudents = 1;
-  int p1MmoneyStudents = 1;
-
-  int p2Campuses = 2;
-  int p2GO8s = 0;
-  int p2IPs = 0;
-  int p2ARCs = 0;
-  int p2ThdStudents = 0;
-  int p2BpsStudents = 3;
-  int p2BqnStudents = 3;
-  int p2MjStudents = 1;
-  int p2MtvStudents = 1;
-  int p2MmoneyStudents = 1;
-  
-  int p3Campuses = 2;
-  int p3GO8s = 0;
-  int p3IPs = 0;
-  int p3ARCs = 0;
-  int p3ThdStudents = 0;
-  int p3BpsStudents = 3;
-  int p3BqnStudents = 3;
-  int p3MjStudents = 1;
-  int p3MtvStudents = 1;
-  int p3MmoneyStudents = 1;
-  
 } game;
 
-int main(/* Put the argv argc stuff here plz. */) {
-  // I have no clue what to put here.
-  return EXIT_SUCCESS;
-}
+/*///////
+FUNCTIONS
+///////*/
 
+
+static Game setupGame(Game g) {
+  int c = 0;
+  while (c < 3) {
+    g.players[c].thd = 0;
+    g.players[c].bps = 3;
+    g.players[c].bqn = 3;
+    g.players[c].mj = 1;
+    g.players[c].mtv = 1;
+    g.players[c].mmoney = 1;
+    
+    g.players[c].campusLocations[PATH_LIMIT] = {0};
+    g.players[c].arcLocations[PATH_LIMIT] = {0};
+    g.players[c].go8Locations[PATH_LIMIT] = {0};
+    
+    g.players[c].pub = 0;
+    g.players[c].ip = 0;
+    g.players[c].kpi = 0;
+  }
+  return g;
+}
 
 void disposeGame (Game g) {
 	free(g);
