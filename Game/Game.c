@@ -41,9 +41,20 @@ typedef struct _game {
 FUNCTIONS
 ///////*/
 
-
-static Game setupGame(Game g) {
-  int c = 0;
+Game newGame(int disciplinesValues[],int diceValues[]) {
+  // Set up game
+	Game g = malloc(sizeof(game));
+	int c = 0;
+	while (c < NUM_REGIONS) {
+		g.disciplines[c] = disciplinesValues[c];
+		g.diceValues[c] = diceValues[c];
+		count ++;
+	}
+  g.turnNum = -1;
+  g.disciplines[NUM_REGIONS] = disciplinesValues[];
+  g.diceValues[NUM_REGIONS] = diceValues[];
+  // Set up players
+  c = 0;
   while (c < 3) {
     g.players[c].thd = 0;
     g.players[c].bps = 3;
@@ -60,7 +71,7 @@ static Game setupGame(Game g) {
     g.players[c].ip = 0;
     g.players[c].kpi = 0;
   }
-  return g;
+	return g;
 }
 
 void disposeGame (Game g) {
