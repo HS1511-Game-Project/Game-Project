@@ -78,6 +78,28 @@ void disposeGame (Game g) {
 	free(g);
 }
 
+void makeAction (Game g, action a) {
+	if (a.actionCode == PASS) {
+    continue; // Put stuff here
+	} else if (a.actionCode == BUILD_CAMPUS) {
+    continue; // Put stuff here
+	} else if (a.actionCode == BUILD_GO8) {
+    continue; // Put stuff here
+	} else if (a.actionCode == OBTAIN_ARC) {
+    continue; // Put stuff here
+	} else if (a.actionCode == START_SPINOFF) {
+    continue; // Put stuff here
+	} else if  (a.actionCode == OBTAIN_PUBLICATION) {
+    continue; // Put stuff here
+	} else if (a.actionCode == OBTAIN_IP_PATENT) {
+    continue; // Put stuff here
+	} else if (a.actionCode == RETRAIN_STUDENTS) {
+    continue; // Put stuff here
+	} else {
+		assert(False); // Something is wrong
+	}
+}
+
 int getTurnNumber(Game g) { // Djimon
   return g.currentTurn;
 }
