@@ -25,16 +25,16 @@ struct player {
   int mtv = 1;
   int mmoney = 1;
 
-	int pub; // Publications
-	int ip;
-	int kpi;
+  int pub; // Publications
+  int ip;
+  int kpi;
 } player;
 
 typedef struct _game {
-	struct player players[3];
-	int turnNum;
-	int disciplines[NUM_REGIONS];
-	int diceValues[NUM_REGIONS];
+  struct player players[3];
+  int turnNum;
+  int disciplines[NUM_REGIONS];
+  int diceValues[NUM_REGIONS];
   int maxPoints;
 } game;
 
