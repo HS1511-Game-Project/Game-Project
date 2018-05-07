@@ -14,6 +14,9 @@ struct player {
 	path campusLocations[PATH_LIMIT];
 	path arcLocations[PATH_LIMIT];
 	path go8Locations[PATH_LIMIT];
+  int numCampuses;
+  int numArcs;
+  int numGo8s;
   
   int thd = 0; // These show how many of each type of student each player has.
   int bps = 3;
@@ -61,9 +64,12 @@ Game newGame(int disciplinesValues[],int diceValues[]) {
     g.players[c].mtv = 1;
     g.players[c].mmoney = 1;
     
-    g.players[c].campusLocations[PATH_LIMIT] = {0};
-    g.players[c].arcLocations[PATH_LIMIT] = {0};
-    g.players[c].go8Locations[PATH_LIMIT] = {0};
+    g.players[c].campusLocations[PATH_LIMIT] = {0}; // Someone fix this
+    g.players[c].arcLocations[PATH_LIMIT] = {0}; // And this
+    g.players[c].go8Locations[PATH_LIMIT] = {0}; // And this. Because you start with 2 campuses so put in their locations
+    g.players[c].numCampuses = 2;
+    g.players[c].numArcs = 0;
+    g.players[c].numGo8s = 0;
     
     g.players[c].pub = 0;
     g.players[c].ip = 0;
@@ -99,16 +105,16 @@ void makeAction (Game g, action a) {
 }
 
 int getTurnNumber(Game g) { // Djimon
-  return g.currentTurn;
+  return g.turnNum;
 }
 
 int getWhoseTurn(Game g) { // Djimon
   int id;
-  if (g.currentTurn == -1) {
+  if (g.turnNum == -1) {
     id = NO_ONE;
-  } else if (g.currentTurn % 3 == 0) {
+  } else if (g.turnNum % 3 == 0) {
     id = UNI_A;
-  } else if (g.currentTurn +1 % 3 == 0) {
+  } else if (g.turnNum +1 % 3 == 0) {
     id = UNI_B;
   } else {
     id = UNI_C;
@@ -117,97 +123,35 @@ int getWhoseTurn(Game g) { // Djimon
 }
 
 int getARCs(Game g, int player) { // Djimon
-  int numARCs;
-  if (player == 1) {
-    numARCs = game.p1ARCs;
-  } else if (player == 2) {
-    numARCs = game.p2ARCs;
-  } else {
-    numARCs = game.p3ARCs;
-  }
-  return numARCs;
+  return g.players[player-1].numArcs;
 }
 
 int getGO8s(Game g, int player) { // Djimon
-  int numGO8s;
-  if (player == 1) {
-    numGO8s = game.p1GO8s;
-  } else if (player == 2) {
-    numGO8s = game.p2GO8s;
-  } else {
-    numGO8s = game.p3GO8s;
-  }
-  return numGO8s;
+  return g.players[player-1].numGo8s;
 }
 
 int getCampuses(Game g, int player) { // Djimon
-  int numCampuses;
-  if (player == 1) {
-    numCampuses = game.p1Campuses;
-  } else if (player == 2) {
-    numCampuses = game.p2Campuses;
-  } else {
-    numCampuses = game.p3Campuses;
-  }
-  return numCampuses;
+  return g.players[player-1].numGo8s;
 }
 
 int getIPs(Game g, int player) { // Djimon
-  int IPs;
-  if (player == 1) {
-    IPs = game.p1IPs;
-  } else if (player == 2) {
-    IPs = game.p2IPs;
-  } else {
-    IPs = game.p3IPs;
-  }
-  return IPs;
+  return g.players[player-1].ip;
 }
 
 int getStudents(Game g, int player, int discipline) { // Djimon
   int numStudents;
-  if (player == 1) {
-    if (discipline == STUDENT_THD) {
-      numStudents = game.p1ThdStudents;
-    } else if (discipline == STUDENT_BPS) {
-      numStudents = game.p1BpsStudents;
-    } else if (discipline == STUDENT_BQN) {
-      numStudents = game.p1BqnStudents;
-    } else if (discipline == STUDENT_MJ) {
-      numStudents = game.p1MjStudents;
-    } else if (discipline == STUDENT_MTV) {
-      numStudents = game.p1MtvStudents;
-    } else { // else if (discipline == STUDENT_MMONEY) 
-      numStudents = game.p1MmoneyStudents;
-    }
-  } else if (player == 2) {
-    if (discipline == STUDENT_THD) {
-      numStudents = game.p2ThdStudents;
-    } else if (discipline == STUDENT_BPS) {
-      numStudents = game.p2BpsStudents;
-    } else if (discipline == STUDENT_BQN) {
-      numStudents = game.p2BqnStudents;
-    } else if (discipline == STUDENT_MJ) {
-      numStudents = game.p2MjStudents;
-    } else if (discipline == STUDENT_MTV) {
-      numStudents = game.p2MtvStudents;
-    } else { // else if (discipline == STUDENT_MMONEY) 
-      numStudents = game.p2MmoneyStudents;
-    }
-  } else { // else if (player == 3) {
-    if (discipline == STUDENT_THD) {
-      numStudents = game.p3ThdStudents;
-    } else if (discipline == STUDENT_BPS) {
-      numStudents = game.p3BpsStudents;
-    } else if (discipline == STUDENT_BQN) {
-      numStudents = game.p3BqnStudents;
-    } else if (discipline == STUDENT_MJ) {
-      numStudents = game.p3MjStudents;
-    } else if (discipline == STUDENT_MTV) {
-      numStudents = game.p3MtvStudents;
-    } else { // else if (discipline == STUDENT_MMONEY) 
-      numStudents = game.p3MmoneyStudents;
-    }
+  if (discipline == STUDENT_THD) {
+    numStudents = g.players[player-1].thd;
+  } else if (discipline == STUDENT_BPS) {
+    numStudents = g.players[player-1].bps;
+  } else if (discipline == STUDENT_BQN) {
+    numStudents = g.players[player-1].bqn;
+  } else if (discipline == STUDENT_MJ) {
+    numStudents = g.players[player-1].mj;
+  } else if (discipline == STUDENT_MTV) {
+    numStudents = g.players[player-1].mtv;
+  } else { // else if (discipline == STUDENT_MMONEY) 
+    numStudents = g.players[player-1].mmoney;
   }
   return numStudents;
 }
