@@ -10,7 +10,7 @@
 STRUCTS
 /////*/
 
-struct player {
+struct player { // if that next line is outdented...
 	path campusLocations[PATH_LIMIT];
 	path arcLocations[PATH_LIMIT];
 	path go8Locations[PATH_LIMIT];
