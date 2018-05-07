@@ -75,11 +75,11 @@ Game newGame(int disciplinesValues[],int diceValues[]) {
     g.players[c].ip = 0;
     g.players[c].kpi = 0;
   }
-	return g;
+  return g;
 }
 
 void disposeGame (Game g) {
-	free(g);
+  free(g);
 }
 
 void makeAction (Game g, action a) {
