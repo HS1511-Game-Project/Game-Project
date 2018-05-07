@@ -44,13 +44,13 @@ FUNCTIONS
 
 Game newGame(int disciplinesValues[],int diceValues[]) {
   // Set up game
-	Game g = malloc(sizeof(game));
-	int c = 0;
-	while (c < NUM_REGIONS) {
-		g.disciplines[c] = disciplinesValues[c];
-		g.diceValues[c] = diceValues[c];
-		count ++;
-	}
+    Game g = malloc(sizeof(game));
+    int c = 0;
+    while (c < NUM_REGIONS) {
+      g.disciplines[c] = disciplinesValues[c];
+      g.diceValues[c] = diceValues[c];
+      count ++;
+    }
   g.turnNum = -1;
   g.disciplines[NUM_REGIONS] = disciplinesValues[];
   g.diceValues[NUM_REGIONS] = diceValues[];
@@ -83,25 +83,25 @@ void disposeGame (Game g) {
 }
 
 void makeAction (Game g, action a) {
-	if (a.actionCode == PASS) {
+  if (a.actionCode == PASS) {
     continue; // Put stuff here
-	} else if (a.actionCode == BUILD_CAMPUS) {
+  } else if (a.actionCode == BUILD_CAMPUS) {
     continue; // Put stuff here
-	} else if (a.actionCode == BUILD_GO8) {
+  } else if (a.actionCode == BUILD_GO8) {
     continue; // Put stuff here
-	} else if (a.actionCode == OBTAIN_ARC) {
+  } else if (a.actionCode == OBTAIN_ARC) {
     continue; // Put stuff here
-	} else if (a.actionCode == START_SPINOFF) {
+  } else if (a.actionCode == START_SPINOFF) {
     continue; // Put stuff here
-	} else if  (a.actionCode == OBTAIN_PUBLICATION) {
+  } else if  (a.actionCode == OBTAIN_PUBLICATION) {
     continue; // Put stuff here
-	} else if (a.actionCode == OBTAIN_IP_PATENT) {
+  } else if (a.actionCode == OBTAIN_IP_PATENT) {
     continue; // Put stuff here
-	} else if (a.actionCode == RETRAIN_STUDENTS) {
+  } else if (a.actionCode == RETRAIN_STUDENTS) {
     continue; // Put stuff here
-	} else {
-		assert(False); // Something is wrong
-	}
+  } else {
+    assert(False); // Something is wrong
+  }
 }
 
 int getTurnNumber(Game g) { // Djimon
