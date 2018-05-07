@@ -59,6 +59,11 @@ int main(/* Put the argv argc stuff here plz. */) {
   return EXIT_SUCCESS;
 }
 
+
+void disposeGame (Game g) {
+	free(g);
+}
+
 int getTurnNumber(Game g) { // Djimon
   return g.currentTurn;
 }
