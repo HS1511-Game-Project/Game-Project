@@ -8,7 +8,7 @@
 
 int main(/* Add argv stuff here */) {
   
-  // TEST 1 // getWhoseTurn,cnewGame and makeAction - Djimon
+  // TEST 1 // newGame and makeAction - Djimon
   printf("Testing getWhoseTurn, newGame and makeAction.\n");
   Game newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
   playerID = getWhoseTurn(newBoard);
@@ -113,45 +113,55 @@ int main(/* Add argv stuff here */) {
   printf ("Testing getMostARCs\n");
   assert (getMostARCs (testGame) == NO_ONE);
 
-  printf ("Testing getMostPublications\n");
+  // TEST 7 // getMostPublications
+  printf ("Testing getMostPublications\n"); 
   assert (getMostPublications (testGame) == NO_ONE);
   
+  // TEST 8 // getTurnNumber
   printf ("Testing getTurnNumber\n");
   assert (getTurnNumber (testGame) == -1);
 
+  // TEST 9 // getWhoseTurn
   printf ("Testing getWhoseTurn\n");
   assert (getWhoseTurn (testGame) == NO_ONE);
 
+  // TEST 10 // getKPIPoints
   printf ("Testing getKPIpoints\n");
   assert (getKPIpoints (testGame, UNI_A) == 0);
   assert (getKPIpoints (testGame, UNI_B) == 0);
   assert (getKPIpoints (testGame, UNI_C) == 0);
 
+  // TEST 11 // getARCs
   printf ("Testing getARCs\n");
   assert (getARCs (testGame, UNI_A) == 0);
   assert (getARCs (testGame, UNI_B) == 0);
   assert (getARCs (testGame, UNI_C) == 0);
 
+  // TEST 12 // getGO8s
   printf ("Testing getGO8s\n");
   assert (getGO8s (testGame, UNI_A) == 0);
   assert (getGO8s (testGame, UNI_B) == 0);
   assert (getGO8s (testGame, UNI_C) == 0);
   
+  // TEST 13 // getCampuses
   printf ("Testing getCampuses\n");
   assert (getCampuses (testGame, UNI_A) == 0);
   assert (getCampuses (testGame, UNI_B) == 0);
   assert (getCampuses (testGame, UNI_C) == 0);
 
+  // TEST 14 // getIPs
   printf ("Testing getIPs\n");
   assert (getIPs (testGame, UNI_A) == 0);
   assert (getIPs (testGame, UNI_B) == 0);
   assert (getIPs (testGame, UNI_C) == 0);
 
+  // TEST 15 // getPublications
   printf ("Testing getPublications\n");
   assert (getPublications (testGame, UNI_A) == 0);
   assert (getPublications (testGame, UNI_B) == 0);
   assert (getPublications (testGame, UNI_C) == 0);
   
+  // TEST 16 // getStudents
   printf ("Testing getStudents\n");
   assert (getStudents (testGame, UNI_A, STUDENT_THD) == 0);
   assert (getStudents (testGame, UNI_A, STUDENT_BPS) == 3);
@@ -160,6 +170,7 @@ int main(/* Add argv stuff here */) {
   assert (getStudents (testGame, UNI_A, STUDENT_MTV) == 1);
   assert (getStudents (testGame, UNI_A, STUDENT_MMONEY) == 1);
   
+  // TEST 17 // disposeGame
   printf ("Disposing testGame\n");
   disposeGame (testGame);
 
