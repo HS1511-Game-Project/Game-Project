@@ -1,10 +1,13 @@
-
 // Created by Harris Borman, Djimon Jayasundera, and Zachary Chengy
 // This program aims to test the game and see if it is valid.
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "Game.h"
+
+#define TRUE 1
+#define FALSE 0
+
 
 int main(/* Add argv stuff here */) {
   
@@ -19,14 +22,14 @@ int main(/* Add argv stuff here */) {
   printf("Testing isLegalAction and board coordinates.");
   newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
   // Supposed to be false ( out of the board )
-  assert(isLegalAction(newBoard,path "llll") == 0);
-  assert(isLegalAction(newBoard,path "rrrr") == 0);
+  assert(isLegalAction(newBoard,path "llll") == FALSE);
+  assert(isLegalAction(newBoard,path "rrrr") == FALSE);
   
-  assert(isLegalAction(newBoard,path "lrlrlrlrlr") == 1);
-  assert(isLegalAction(newBoard,path "rlrlrlrlrl") == 1);
+  assert(isLegalAction(newBoard,path "lrlrlrlrlr") == TRUE);
+  assert(isLegalAction(newBoard,path "rlrlrlrlrl") == TRUE);
   
-  assert(isLegalAction(newBoard,path "llrlrrrr") == 1);
-  assert(isLegalAction(newBoard,path "rrlrllll") == 1);
+  assert(isLegalAction(newBoard,path "llrlrrrr") == TRUE);
+  assert(isLegalAction(newBoard,path "rrlrllll") == TRUE);
   
   printf("Testing Passed!");
   
