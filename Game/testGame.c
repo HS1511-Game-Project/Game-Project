@@ -28,6 +28,35 @@ int main(/* Add argv stuff here */) {
   assert(isLegalAction(newBoard,path "llrlrrrr") == 1);
   assert(isLegalAction(newBoard,path "rrlrllll") == 1);
   
+  assert(isLegalAction(newBoard,path "lllrrr") == 1)
+  assert(isLegalAction(newBoard,path "lrrlrl") == 1)
+  assert(isLegalAction(newBoard,path "llrrlr") == 1)
+  assert(isLegalAction(newBoard,path "rrlllr") == 1)
+  assert(isLegalAction(newBoard,path "lrlr") == 1)
+  assert(isLegalAction(newBoard,path "rlrl") == 1)
+  assert(isLegalAction(newBoard,path "rllrrl") == 1)
+  assert(isLegalAction(newBoard,path "rl") == 1)
+  assert(isLegalAction(newBoard,path "rrrlll") == 1)
+  assert(isLegalAction(newBoard,path "lrlrrl") == 1)
+  assert(isLegalAction(newBoard,path "rllrlr") == 1)
+  assert(isLegalAction(newBoard,path "llrrrl") == 1)
+  assert(isLegalAction(newBoard,path "lrlrlr") == 1)
+  assert(isLegalAction(newBoard,path "rlllrr") == 1)
+  assert(isLegalAction(newBoard,path "lrrrll") == 1)
+  assert(isLegalAction(newBoard,path "llrr") == 1)
+  assert(isLegalAction(newBoard,path "rrllrl") == 1)
+  assert(isLegalAction(newBoard,path "lr") == 1)
+  assert(isLegalAction(newBoard,path "rrlrll") == 1)
+  assert(isLegalAction(newBoard,path "rllr") == 1)
+  assert(isLegalAction(newBoard,path "lrrl") == 1)
+  assert(isLegalAction(newBoard,path "rrll") == 1)
+  assert(isLegalAction(newBoard,path "llrlrr") == 1)
+  assert(isLegalAction(newBoard,path "rlrrll") == 1)
+  assert(isLegalAction(newBoard,path "lrllrr") == 1)
+  assert(isLegalAction(newBoard,path "lrrllr") == 1)
+  assert(isLegalAction(newBoard,path "rlrllr") == 1)
+  assert(isLegalAction(newBoard,path "rlrlrl") == 1)
+  
   // TEST 3 // getCampuses - Djimon
   printf("Testing getCampuses.\n");
   newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
