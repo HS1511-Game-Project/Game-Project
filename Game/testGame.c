@@ -81,77 +81,77 @@ int main(/* Add argv stuff here */) {
   assert (getDiceValue (testGame, 18) == 5);
   
   // TEST 6 // getMostArcs
-    printf ("Testing getMostARCs\n");
+  printf ("Testing getMostARCs\n");
 
-    assert (getMostARCs (testGame) == NO_ONE);
+  assert (getMostARCs (testGame) == NO_ONE);
 
     
 
-    printf ("Testing getMostPublications\n");
+  printf ("Testing getMostPublications\n");
 
-    assert (getMostPublications (testGame) == NO_ONE);
-
-
-
-    printf ("Testing getTurnNumber\n");
-
-    assert (getTurnNumber (testGame) == -1);
+  assert (getMostPublications (testGame) == NO_ONE);
 
 
 
-    printf ("Testing getWhoseTurn\n");
+  printf ("Testing getTurnNumber\n");
 
-    assert (getWhoseTurn (testGame) == NO_ONE);
-
-
-
-    printf ("Testing getKPIpoints\n");
-
-    assert (getKPIpoints (testGame, UNI_A) == 0);
-
-    assert (getKPIpoints (testGame, UNI_B) == 0);
-
-    assert (getKPIpoints (testGame, UNI_C) == 0);
+  assert (getTurnNumber (testGame) == -1);
 
 
 
-    printf ("Testing getARCs\n");
+  printf ("Testing getWhoseTurn\n");
 
-    assert (getARCs (testGame, UNI_A) == 0);
+  assert (getWhoseTurn (testGame) == NO_ONE);
 
-    assert (getARCs (testGame, UNI_B) == 0);
 
-    assert (getARCs (testGame, UNI_C) == 0);
+
+  printf ("Testing getKPIpoints\n");
+
+  assert (getKPIpoints (testGame, UNI_A) == 0);
+
+  assert (getKPIpoints (testGame, UNI_B) == 0);
+
+  assert (getKPIpoints (testGame, UNI_C) == 0);
+
+
+
+  printf ("Testing getARCs\n");
+
+  assert (getARCs (testGame, UNI_A) == 0);
+
+  assert (getARCs (testGame, UNI_B) == 0);
+
+  assert (getARCs (testGame, UNI_C) == 0);
 
  
 
-    printf ("Testing getGO8s\n");
+  printf ("Testing getGO8s\n");
 
-    assert (getGO8s (testGame, UNI_A) == 0);
+  assert (getGO8s (testGame, UNI_A) == 0);
 
-    assert (getGO8s (testGame, UNI_B) == 0);
+  assert (getGO8s (testGame, UNI_B) == 0);
 
-    assert (getGO8s (testGame, UNI_C) == 0);
+  assert (getGO8s (testGame, UNI_C) == 0);
 
 
 
-    printf ("Testing getCampuses\n");
+  printf ("Testing getCampuses\n");
 
-    assert (getCampuses (testGame, UNI_A) == 0);
+  assert (getCampuses (testGame, UNI_A) == 0);
 
-    assert (getCampuses (testGame, UNI_B) == 0);
+  assert (getCampuses (testGame, UNI_B) == 0);
 
-    assert (getCampuses (testGame, UNI_C) == 0);
+  assert (getCampuses (testGame, UNI_C) == 0);
 
     
 
-    printf ("Testing getIPs\n");
+  printf ("Testing getIPs\n");
 
-    assert (getIPs (testGame, UNI_A) == 0);
+  assert (getIPs (testGame, UNI_A) == 0);
 
-    assert (getIPs (testGame, UNI_B) == 0);
+  assert (getIPs (testGame, UNI_B) == 0);
 
-    assert (getIPs (testGame, UNI_C) == 0);
+  assert (getIPs (testGame, UNI_C) == 0);
 
     
 
