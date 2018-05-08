@@ -82,11 +82,24 @@ void disposeGame (Game g) {
   free(g);
 }
 
-void makeAction (Game g, action a) {
+void makeAction (Game g, action a) { // Djimon
   if (a.actionCode == PASS) {
     continue; // Put stuff here
   } else if (a.actionCode == BUILD_CAMPUS) {
-    continue; // Put stuff here
+    bool enoughBps = g.players[getWhoseTurn(g)-1].bps > 1;
+    bool enoughBqn = g.players[getWhoseTurn(g)-1].bqn > 1;
+    bool enoughMj = g.players[getWhoseTurn(g)-1].mj > 1;
+    bool enoughMtv = g.players[getWhoseTurn(g)-1].mtv > 1;
+    if (enoughBps && enoughBqn && enoughMj && enoughMtv) {
+      g.players[getWhoseTurn(h)-1].bps -= 1;
+      g.players[getWhoseTurn(h)-1].bqn -= 1;
+      g.players[getWhoseTurn(h)-1].mj -= 1;
+      g.players[getWhoseTurn(h)-1].mtv -= 1;
+      // NOw add campus
+    } else {
+      // Put stuff here (you don't have enough resources)
+    }
+    
   } else if (a.actionCode == BUILD_GO8) {
     continue; // Put stuff here
   } else if (a.actionCode == OBTAIN_ARC) {
