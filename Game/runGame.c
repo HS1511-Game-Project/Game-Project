@@ -7,7 +7,7 @@
 Game g = newGame (disciplines, dice); // Create game
 bool gameOver = False;
 
-while (!gameOver) {      
+while (game not over) {      
     diceValue = rollDice();    //simulate throw of two dice - we will discuss how to do this in tutorial
                                // or you may wish to google it and find out how you could do it! 
     dicevalue += rollDice();    //roll second dice 
