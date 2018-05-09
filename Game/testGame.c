@@ -8,7 +8,13 @@
 
 int main(/* Add argv stuff here */) {
   Game turnBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
-  playerID = getWhoseTurn(newBoard);
+  int playerID = getWhoseTurn(newBoard);
+  assert(playerID == NO_ONE);
+  int i = 0;
+  // Makes sure that they don't have any bad code in their turn
+  while (i <= 9001) {
+    
+  }
   // TEST 1 // newGame and makeAction - Djimon
   printf("Testing getWhoseTurn, newGame and makeAction.\n");
   Game newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
