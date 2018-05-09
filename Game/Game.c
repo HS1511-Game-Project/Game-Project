@@ -86,16 +86,21 @@ void makeAction (Game g, action a) { // Harris
   assert(isLegalAction(g, a) == TRUE);
   if (a.actionCode == PASS) {
     continue;
+    
   } else if (a.actionCode == BUILD_CAMPUS) {
     g.players[getWhoseTurn(g) - 1].numCampuses++;
     g.players[getWhoseTurn(g) - 1].campusLocations[numCampuses-1] = a.path;
+    // ALSO ADD MINUSING THE PLAYERS STUDENTS BASED ON HOW MUCH IT COSTS
+    
   } else if (a.actionCode == BUILD_GO8) {
-    g.players[getWhoseTurn(g) - 1].num
-    continue; 
+    g.players[getWhoseTurn(g) - 1].numGo8s++;
+    g.players[getWhoseTurn(g) - 1].go8Locations[numGo8s-1] = a.path;
+    // ALSO ADD MINUSING THE PLAYERS STUDENTS BASED ON HOW MUCH IT COSTS
+    
   } else if (a.actionCode == OBTAIN_ARC) {
-    continue; // Put stuff here
+    continue; // This is weird, well.... it shouldn't pass isLegalAction.
   } else if (a.actionCode == START_SPINOFF) {
-    continue; // Put stuff here
+    
   } else if  (a.actionCode == OBTAIN_PUBLICATION) {
     continue; // Put stuff here
   } else if (a.actionCode == OBTAIN_IP_PATENT) {
@@ -188,9 +193,9 @@ int isLegalAction(Game g, action a) { // Zac & Harris
             legal = True;
         }
     } else if (a.actionCode == OBTAIN_PUBLICATION) {
-        legal = True;
+        legal = FALSE;
     } else if (a.actionCode == OBTAIN_IP_PATENT) {
-        legal = True;
+        legal = FALSE;
 
     return legal;
 }
