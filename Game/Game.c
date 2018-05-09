@@ -82,26 +82,16 @@ void disposeGame (Game g) {
   free(g);
 }
 
-void makeAction (Game g, action a) { // Djimon
+void makeAction (Game g, action a) { // Harris
+  assert(isLegalAction(g, a) == True);
   if (a.actionCode == PASS) {
-    continue; // Put stuff here
+    continue;
   } else if (a.actionCode == BUILD_CAMPUS) {
-    bool enoughBps = g.players[getWhoseTurn(g)-1].bps > 1;
-    bool enoughBqn = g.players[getWhoseTurn(g)-1].bqn > 1;
-    bool enoughMj = g.players[getWhoseTurn(g)-1].mj > 1;
-    bool enoughMtv = g.players[getWhoseTurn(g)-1].mtv > 1;
-    if (enoughBps && enoughBqn && enoughMj && enoughMtv) {
-      g.players[getWhoseTurn(h)-1].bps -= 1;
-      g.players[getWhoseTurn(h)-1].bqn -= 1;
-      g.players[getWhoseTurn(h)-1].mj -= 1;
-      g.players[getWhoseTurn(h)-1].mtv -= 1;
-      // NOw add campus
-    } else {
-      // Put stuff here (you don't have enough resources)
-    }
-    
+    g.players[getWhoseTurn(g) - 1].numCampuses++;
+    g.players[getWhoseTurn(g) - 1].campusLocations[numCampuses-1] = a.path;
   } else if (a.actionCode == BUILD_GO8) {
-    continue; // Put stuff here
+    g.players[getWhoseTurn(g) - 1].
+    continue; 
   } else if (a.actionCode == OBTAIN_ARC) {
     continue; // Put stuff here
   } else if (a.actionCode == START_SPINOFF) {
@@ -169,8 +159,8 @@ int getStudents(Game g, int player, int discipline) { // Djimon
   return numStudents;
 }
 
-int isLegalAction(Game g, action a) { // Zac
-    int legal = True; //assumes true
+int isLegalAction(Game g, action a) { // Zac & Harris
+    bool legal;
     int player = getWhoseTurn(g);
     if (getTurnNumber(g )== TERRA_NULLIS) {
         legal = False;
@@ -181,27 +171,27 @@ int isLegalAction(Game g, action a) { // Zac
         bool enoughBqn = getStudents(g, player, STUDENT_BQN)<1;
         bool enoughMj = getStudents(g, player, STUDENT_MJ)<1;
         bool enoughMtv = getStudents(g, player, STUDENT_MTV)<1;
-        if (enoughBps || enoughBqn || enoughMj || enoughMtv) { 
-            legal = False;
+        if (enoughBps && enoughBqn && enoughMj && enoughMtv) { 
+            legal = True;
         }
     } else if (a.actionCode == BUILD_GO8) {
         // I am not even gonna try keeping that next line under 72 characters.
-        if((g->players[player].disciplines[STUDENT_MJ]<2) || (g->players[player].disciplines[STUDENT_MMONEY]<3) || (getCampuses(g, player)<1)){
-            legal = False;
+        if((g->players[player].disciplines[STUDENT_MJ]<2) && (g->players[player].disciplines[STUDENT_MMONEY]<3) && (getCampuses(g, player)<1)){
+            legal = True;
         }
     } else if (a.actionCode == OBTAIN_ARC) {
-        if((g->players[player].disciplines[STUDENT_BPS]<1) || (g->players[player].disciplines[STUDENT_BQN]<1)){
-            legal = False;
+        if((g->players[player].disciplines[STUDENT_BPS]<1) && (g->players[player].disciplines[STUDENT_BQN]<1)){
+            legal = True;
         }
     } else if (a.actionCode == START_SPINOFF) {
-        if((getStudents(g, player, STUDENT_MJ)<1) || (getStudents(g, player, STUDENT_MTV)<1) || (getStudents(g, player, STUDENT_MMONEY)<1)){
-            legal = False;
+        if((getStudents(g, player, STUDENT_MJ)<1) && (getStudents(g, player, STUDENT_MTV)<1) && (getStudents(g, player, STUDENT_MMONEY)<1)){
+            legal = True;
         }
     } else if (a.actionCode == OBTAIN_PUBLICATION) {
-        legal = False;
+        legal = True;
     } else if (a.actionCode == OBTAIN_IP_PATENT) {
-        legal = False;
-        p += 1; // umm.. what is this?
+        legal = True;
+
     return legal;
 }
 
