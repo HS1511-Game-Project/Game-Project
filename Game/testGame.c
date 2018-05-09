@@ -7,7 +7,8 @@
 #include "Game.h"
 
 int main(/* Add argv stuff here */) {
-  
+  Game turnBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
+  playerID = getWhoseTurn(newBoard);
   // TEST 1 // newGame and makeAction - Djimon
   printf("Testing getWhoseTurn, newGame and makeAction.\n");
   Game newBoard = newGame(DEFAULT_DISCIPLINES, DEFAULT_DICE);
