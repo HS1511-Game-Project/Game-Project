@@ -83,14 +83,14 @@ void disposeGame (Game g) {
 }
 
 void makeAction (Game g, action a) { // Harris
-  assert(isLegalAction(g, a) == True);
+  assert(isLegalAction(g, a) == TRUE);
   if (a.actionCode == PASS) {
     continue;
   } else if (a.actionCode == BUILD_CAMPUS) {
     g.players[getWhoseTurn(g) - 1].numCampuses++;
     g.players[getWhoseTurn(g) - 1].campusLocations[numCampuses-1] = a.path;
   } else if (a.actionCode == BUILD_GO8) {
-    g.players[getWhoseTurn(g) - 1].
+    g.players[getWhoseTurn(g) - 1].num
     continue; 
   } else if (a.actionCode == OBTAIN_ARC) {
     continue; // Put stuff here
