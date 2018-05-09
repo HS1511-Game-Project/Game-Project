@@ -165,38 +165,54 @@ int getStudents(Game g, int player, int discipline) { // Djimon
 }
 
 int isLegalAction(Game g, action a) { // Zac & Harris
-    bool legal;
+    int legal = TRUE;
     int player = getWhoseTurn(g);
     if (getTurnNumber(g )== TERRA_NULLIS) {
-        legal = False;
+        legal = FALSE;
     } else if (a.actionCode == PASS) {
         continue;
     } else if (a.actionCode == BUILD_CAMPUS) {
-        bool enoughBps = getStudents(g, player, STUDENT_BPS)<1;
-        bool enoughBqn = getStudents(g, player, STUDENT_BQN)<1;
-        bool enoughMj = getStudents(g, player, STUDENT_MJ)<1;
-        bool enoughMtv = getStudents(g, player, STUDENT_MTV)<1;
+        int enoughBps = getStudents(g, player, STUDENT_BPS) >= 1;
+        int enoughBqn = getStudents(g, player, STUDENT_BQN) >= 1;
+        int enoughMj = getStudents(g, player, STUDENT_MJ) >= 1;
+        int enoughMtv = getStudents(g, player, STUDENT_MTV) >= 1;
+
         if (enoughBps && enoughBqn && enoughMj && enoughMtv) { 
-            legal = True;
+            legal = TRUE;
+        } else {
+            legal = FALSE;
         }
+
     } else if (a.actionCode == BUILD_GO8) {
-        // I am not even gonna try keeping that next line under 72 characters.
-        if((g->players[player].disciplines[STUDENT_MJ]<2) && (g->players[player].disciplines[STUDENT_MMONEY]<3) && (getCampuses(g, player)<1)){
-            legal = True;
+        int enoughMj = getStudents(g,player,STUDENT_MJ)>=2;
+        int enoughMmoney = getStudents(g,player,STUDENT_MMONEY)>=3;
+        int enoughCampus = getCampuses(g, player) >= 1;
+
+        if(enoughMj && enoughMmoney && enoughCampus){
+            legal = TRUE;
+        } else {
+            legal = FALSE;
         }
     } else if (a.actionCode == OBTAIN_ARC) {
-        if((g->players[player].disciplines[STUDENT_BPS]<1) && (g->players[player].disciplines[STUDENT_BQN]<1)){
-            legal = True;
+        int enoughBps = getStudents(g,player,STUDENT_BPS) >= 1;
+        int enoughBqn = getStudents(g,player,STUDENT_BQN) >= 1;
+        if(enoughBps && enoughBqn){
+            legal = TRUE;
+        } else {
+            legal = FALSE;
         }
-    } else if (a.actionCode == START_SPINOFF) {
-        if((getStudents(g, player, STUDENT_MJ)<1) && (getStudents(g, player, STUDENT_MTV)<1) && (getStudents(g, player, STUDENT_MMONEY)<1)){
-            legal = True;
-        }
-    } else if (a.actionCode == OBTAIN_PUBLICATION) {
-        legal = FALSE;
-    } else if (a.actionCode == OBTAIN_IP_PATENT) {
-        legal = FALSE;
 
+    } else if (a.actionCode == START_SPINOFF) {
+        int enoughMj = getStudents(g, player, STUDENT_MJ) >= 1;
+        int enoughMTV = getStudents(g, player, STUDENT_MTV) >= 1;
+        int enoughMMONEY = getStudents(g, player, STUDENT_MMONEY) >= 1;
+
+        if(enoughMj && enoughMTV && enoughMMONEY){
+            legal = TRUE;
+        } else {
+            legal = FALSE;
+        }
+    }
     return legal;
 }
 
