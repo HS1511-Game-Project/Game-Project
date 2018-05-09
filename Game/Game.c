@@ -91,25 +91,54 @@ void makeAction (Game g, action a) { // Harris
     g.players[getWhoseTurn(g) - 1].numCampuses++;
     g.players[getWhoseTurn(g) - 1].campusLocations[numCampuses-1] = a.path;
     // ALSO ADD MINUSING THE PLAYERS STUDENTS BASED ON HOW MUCH IT COSTS
+    g.players[getWhoseTurn(g) - 1].bps--;
+    g.players[getWhoseTurn(g) - 1].bqn--;
+    g.players[getWhoseTurn(g) - 1].mj--;
+    g.players[getWhoseTurn(g) - 1].mtv--;
     
   } else if (a.actionCode == BUILD_GO8) {
     g.players[getWhoseTurn(g) - 1].numGo8s++;
     g.players[getWhoseTurn(g) - 1].go8Locations[numGo8s-1] = a.path;
     // ALSO ADD MINUSING THE PLAYERS STUDENTS BASED ON HOW MUCH IT COSTS
+    g.players[getWhoseTurn(g) - 1].mj -= 2;
+    g.players[getWhoseTurn(g) - 1].mmoney -= 3;
+
     
   } else if (a.actionCode == OBTAIN_ARC) {
+    g.players[getWhoseTurn(g) - 1].numarcs++;
+    g.players[getWhoseTurn(g) - 1].arcLocations[numGo8s-1] = a.path;
+    g.players[getWhoseTurn(g) - 1].bps--;
+    g.players[getWhoseTurn(g) - 1].bqn--;;
     continue; // This is weird, well.... it shouldn't pass isLegalAction.
   } else if (a.actionCode == START_SPINOFF) {
-    
+    if startSpinoff() {
+        g.players[getWhoseTurn(g) - 1].numGo8s++;
+    } else {
+        g.players[getWhoseTurn(g) - 1].numGo8s++;
+    }
+    g.players[getWhoseTurn(g) - 1].mtv--;
+    g.players[getWhoseTurn(g) - 1].mj--;
+    g.players[getWhoseTurn(g) - 1].mmoney--;
+
   } else if  (a.actionCode == OBTAIN_PUBLICATION) {
-    continue; // Put stuff here
+    continue; 
   } else if (a.actionCode == OBTAIN_IP_PATENT) {
-    continue; // Put stuff here
+    continue; 
   } else if (a.actionCode == RETRAIN_STUDENTS) {
+    
     continue; // Put stuff here
   } else {
     assert(False); // Something is wrong
   }
+}
+
+int IPOrPublication() {
+    int randomValue = rand() % 3
+    if (randomValue == 0) {
+        return 1
+    } else {
+        return 0
+    }
 }
 
 int getTurnNumber(Game g) { // Djimon
